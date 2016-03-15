@@ -29,6 +29,17 @@ const joey = student.create({
     grade: "sophmore",
     teacher: avery
 });
+  
+//Arbitary binding example - START
+const myName = Ember.Object.extend({
+    name: 'Erik Hanchett',
+      otherName: Ember.computed.alias('name')
+});
+
+const erik = myName.create();
+console.log(erik.get('name')); //Erik Hanchett
+console.log(erik.get('otherName')); //Erik Hanchett
+//Arbitary binding example - END
 
 console.log(joey.get('age')); //16
 console.log(avery.get('homeroom')); //1075
